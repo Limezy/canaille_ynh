@@ -1,34 +1,29 @@
 {
-	"name": "Weblate",
-	"id": "weblate",
+	"name": "Canaille",
+	"id": "canaille",
 	"packaging_format": 1,
 	"description": {
-		"en": "Translation platform using Git and Python",
-		"fr": "Plateforme de traduction utilisant Git et Python" 
+		"en": "OpenID anthentificator against LDAP directoru",
+		"fr": "Service d'authentification OpenID basé sur un annuaire LDAP" 
 	},
-	"version": "4.11.2~ynh1",
-	"url": "https://weblate.org",
+	"version": "0.0.6~ynh1",
+	"url": "https://canaille.readthedocs.io/",
 	"upstream": {
         "license": "AGPL-3.0",
-        "website": "https://weblate.org",
-        "demo": "https://hosted.weblate.org/",
-        "admindoc": "https://docs.weblate.org/",
-        "userdoc": "https://docs.weblate.org/",
-        "code": "https://github.com/WeblateOrg/weblate"
+        "website": "https://canaille.readthedocs.io/",
+        "admindoc": "https://canaille.readthedocs.io/",
+        "userdoc": "https://canaille.readthedocs.io/",
+        "code": "https://gitlab.com/yaal/canaille"
     },
 	"license": "AGPL-3.0",
 	"maintainer": {
 		"name": "YunoHost Contributors",
 		"email": "apps@yunohost.org"
 	},
-	"previous_maintainers": [{
-		"name": "Jean-Baptiste Holcroft",
-		"email": "jean-baptiste@holcroft.fr"
-	}],
 	"requirements": {
 		"yunohost": ">= 4.2.0"
 	},
-	"multi_instance": true,
+	"multi_instance": false,
 	"services": [
 		"nginx"
 	],
@@ -41,8 +36,8 @@
 			{
 				"name": "path",
 				"type": "path",
-				"example": "/weblate",
-				"default": "/weblate"
+				"example": "/auth",
+				"default": "/"
 			},
 			{
 				"name": "is_public",
@@ -51,33 +46,7 @@
 					"en": "Any YunoHost user and anonymous people from the web will be able to access the application",
 					"fr": "Tout utilisateur YunoHost et les personnes anonymes pourront accéder à l'application"
 				},
-				"default": false
-			},
-			{
-				"name": "admin",
-				"type": "user"
-			},
-			{
-				"name": "password",
-				"type": "password"
-			},
-			{
-				"name": "github_account",
-				"type": "string",
-				"ask": {
-				    "en": "GitHub's username",
-				    "fr": "Nom d'utilisateur de GitHub"
-				},
-				"example": "Github account"
-			},
-			{
-				"name": "github_token",
-				"type": "string",
-				"ask": {
-				    "en": "GitHub's token (OAuth)",
-				    "fr": "Jeton GitHub (OAuth)"
-				},
-				"example": "A secret token"
+				"default": true
 			}
 		]
 	}
